@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Sabores Naturais</title>
+
+<!-- Fonte Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#FFF8E8;
+    font-family:'Poppins', sans-serif;
+    color:#F36D21;
+    overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+    width:100%;
+    min-height:100vh;
+    background:url('hero.png') center top no-repeat;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    padding:5px 20px;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:25px;
+    line-height:1.4;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:22px;
+    font-weight:400;
+    opacity:.95;
+}
+
+/* seta */
+.arrow{
+    margin-top:35px;
+    font-size:38px;
+    animation:float 1.5s infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(8px);}
+}
+
+/* BOTÕES IMAGEM */
+.links{
+    width:100%;
+    max-width:700px;
+    margin:60px auto 30px;
+    padding:0 20px;
+}
+
+.link-btn{
+    width:100%;
+    margin-bottom:45px;
+    display:flex;
+    justify-content:center;
+    position:relative;
+}
+
+.link-btn img{
+    width:100%;
+    max-width:560px;
+    border-radius:28px;
+    cursor:pointer;
+    transition:.3s ease;
+   
+}
+
+.link-btn img:hover{
+    transform:translateY(-5px) scale(1.01);
+}
+
+/* luz embaixo */
+.link-btn::after{
+    content:'';
+    position:absolute;
+    bottom:-18px;
+    width:65%;
+    height:20px;
+   background:radial-gradient(circle, #F36D21 0%, #F36D21 30%, transparent 80%);
+    filter:blur(8px);
+}
+
+/* footer */
+footer{
+    text-align:center;
+    padding:40px 20px 60px;
+    color:#F36D21;
+    font-size:18px;
+    opacity:.85;
+}
+
+/*sumir foto */
+@media (min-width: 1024px){
+   .hero{
+      background-image:none !important;
+      height:0 !important;
+      padding:0 !important;
+      overflow:none ;
+   }
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+
+.hero{
+    min-height:800px;
+    background-position:center top;
+}
+
+.hero h1{
+    font-size:25px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+footer{
+    font-size:15px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>
+            Olá, seja muito bem vindo(a)<br>
+            à página de links da Green Sabores Naturais!
+        </h1>
+
+        <p>Clique no botão para ser redirecionado</p>
+
+        <div class="arrow">↓</div>
+    </div>
+
+</section>
+
+<section class="links">
+
+  <div class="link-btn">
+    <img src="Group 11.png" onclick="goTo('localizacao')">
+  </div>
+
+  <div class="link-btn">
+    <img src="Group 10.png" onclick="goTo('whatsapp')">
+  </div>
+
+  <div class="link-btn">
+    <img src="Group 12.png" onclick="goTo('site')">
+  </div>
+
+  <div class="link-btn">
+    <img src="Group 13.png" onclick="goTo('ifood')">
+  </div>
+
+  <div class="link-btn">
+    <img src="Group 9.png" onclick="goTo('instagram')">
+  </div>
+
+</section>
+
+ <footer>
+    @ 2025 Green Sabores Naturais. Todos os direitos reservados.
+  </footer>
+
+<script>
+function goTo(destino) {
+  const links = {
+    localizacao: "https://maps.app.goo.gl/avvcRakbaeANMY1W6",
+    whatsapp: "https://api.whatsapp.com/send/?phone=556581506161&text=Ol%C3%A1%21+Gostaria+de+fazer+um+pedido%21&type=phone_number&app_absent=0",
+    site: "https://loja.neemo.com.br/greensaboresnaturais",
+    ifood: "https://www.ifood.com.br/delivery/cuiaba-mt/green-sabores-naturais-araes/103e64a1-a026-4790-ab5f-51dad36a62af",
+    instagram: "https://www.instagram.com/greensaboresnaturais"
+  };
+
+  window.location.href = links[destino];
+}
+</script>
+
+</body>
+</html>
